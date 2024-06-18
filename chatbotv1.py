@@ -82,15 +82,12 @@ def main_menu():
         devices_bttn = pygame.Rect(1150, 750, 200, 50)
         faq_bttn = pygame.Rect(1450, 750, 200, 50)
 
-        if settings_bttn.collidepoint((mx, my)):
-            if click:
-                settings()
-        if devices_bttn.collidepoint((mx, my)):
-            if click:
-                devices()
-        if faq_bttn.collidepoint((mx, my)):
-            if click:
-                faq()
+        if settings_bttn.collidepoint((mx, my)) and click:
+            settings()
+        if devices_bttn.collidepoint((mx, my)) and click:
+            devices()
+        if faq_bttn.collidepoint((mx, my)) and click:
+            faq()
 
         pygame.draw.rect(screen, (161, 142, 191), settings_bttn)
         pygame.draw.rect(screen, (161, 142, 191), devices_bttn)
