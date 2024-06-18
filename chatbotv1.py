@@ -224,18 +224,12 @@ def main_menu():
             speak(facts[fact_choice])
 
         for event in pygame.event.get():
-            if event.type == QUIT:
+            if event.type == QUIT or (event.type == KEYDOWN and event.key == K_ESCAPE):
                 pygame.quit()
                 sys.exit()
 
-            if event.type == MOUSEBUTTONDOWN:
-                if event.button == 1:
-                    click = True
-
-            if event.type == KEYDOWN:
-                if event.key == K_ESCAPE:
-                    pygame.quit()
-                    sys.exit()
+            elif event.type == MOUSEBUTTONDOWN and event.button == 1:
+                click = True
 
         pygame.display.update()
         mainClock.tick(60)
@@ -262,14 +256,10 @@ def settings():
         click = False
 
         for event in pygame.event.get():
-            if event.type == QUIT:
+            if event.type == QUIT or (event.type == KEYDOWN and event.key == K_ESCAPE):
                 running = False
-            if event.type == KEYDOWN:
-                if event.key == K_ESCAPE:
-                    running = False
-            if event.type == MOUSEBUTTONDOWN:
-                if event.button == 1:
-                    click = True
+            elif event.type == MOUSEBUTTONDOWN and event.button == 1:
+                click = True
 
         pygame.display.update()
         mainClock.tick(60)
@@ -295,14 +285,10 @@ def devices():
         click = False
 
         for event in pygame.event.get():
-            if event.type == QUIT:
+            if event.type == QUIT or (event.type == KEYDOWN and event.key == K_ESCAPE):
                 running = False
-            if event.type == KEYDOWN:
-                if event.key == K_ESCAPE:
-                    running = False
-            if event.type == MOUSEBUTTONDOWN:
-                if event.button == 1:
-                    click = True
+            elif event.type == MOUSEBUTTONDOWN and event.button == 1:
+                click = True
 
         pygame.display.update()
         mainClock.tick(60)
@@ -328,14 +314,10 @@ def faq():
         click = False
 
         for event in pygame.event.get():
-            if event.type == QUIT:
+            if event.type == QUIT or (event.type == KEYDOWN and event.key == K_ESCAPE):
                 running = False
-            if event.type == KEYDOWN:
-                if event.key == K_ESCAPE:
-                    running = False
-            if event.type == MOUSEBUTTONDOWN:
-                if event.button == 1:
-                    click = True
+            elif event.type == MOUSEBUTTONDOWN and event.button == 1:
+                click = True
 
         pygame.display.update()
         mainClock.tick(60)
